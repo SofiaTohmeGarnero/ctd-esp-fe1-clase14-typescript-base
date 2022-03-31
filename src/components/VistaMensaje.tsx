@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { IMensaje } from "../data/mensajes";
 
 // Debemos tipar las props de nuestro componente
-// Quiza podemos utilizar la interfaz ya creada en mensajes ?
+interface IVistaMensaje {
+    mensaje?: IMensaje
+}
 
-const VistaMensaje = ({ mensaje }) =>
+const VistaMensaje = ({ mensaje }: IVistaMensaje) =>
     mensaje ? (
         <div id="vistaMensaje">
             <h3 className="titulo">{mensaje.asunto}</h3>

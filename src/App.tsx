@@ -2,13 +2,14 @@ import { useState } from "react";
 import ListadoMensajes from "./components/ListadoMensajes";
 import VistaMensaje from "./components/VistaMensaje";
 import { mensajes } from "./data/mensajes";
+import { IMensaje } from "./data/mensajes";
 
 import "./styles.css";
 
 export default function App() {
-    const [mensaje, setMensaje] = useState();
+    const [mensaje, setMensaje] = useState<IMensaje>();
 
-    const seleccionarMensaje = (id) =>
+    const seleccionarMensaje = (id:number): void =>
         setMensaje(mensajes.find((m) => m.id === id));
 
     return (

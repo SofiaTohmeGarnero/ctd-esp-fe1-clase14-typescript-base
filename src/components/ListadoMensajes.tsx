@@ -1,10 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { IMensaje } from "../data/mensajes";
 
 // Debemos tipar las props de nuestro componente
-// Quiza podemos utilizar la interfaz ya creada en mensajes ?
 
-const ListadoMensajes = ({ mensajes = [], seleccionarMensaje }) => (
+interface IListadoMensajes {
+    mensajes: IMensaje[],
+    seleccionarMensaje: (id:number) => void
+}
+
+const ListadoMensajes = ({ mensajes = [], seleccionarMensaje }: IListadoMensajes) => (
     <div id="listadoMensajes">
         {mensajes.map((mensaje) => (
             <div onClick={() => seleccionarMensaje(mensaje.id)} key={mensaje.id}>
